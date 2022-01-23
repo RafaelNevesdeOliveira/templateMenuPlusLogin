@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="d-flex justify-content-center h-100">
+    <div class="cardContent">
+      <div class="cardHeader">
+        <div class="logoExibido">
+          <img class="c-avatar__img" src="assets/img/Proeficiency Test (3).svg" alt="Logotipo da Band" />
+          <!-- <p>exibido</p> -->
+        </div>
+
+        <div class="topDescription" *ngIf="!hideForm">
+          <span class="titleBemVindo">Olá !</span>
+          <span class="textTop">
+            Faça seu Login
+          </span>
+        </div>
+      </div>
+
+      <div class="cardBody" >
+        <form [formGroup]="loginForm" (ngSubmit)="fazerLogin()" *ngIf="!hideForm">
+          <div class="input-group form-group inputUser">
+            <i class="bi bi-person-fill icon"></i>
+            <input type="text" class="form-control" placeholder="Usuário" formControlName="username" />
+          </div>
+
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched('username')" msgErro="Usuário obrigatório !">
+          </app-campo-control-erro>
+
+          <div class="input-group form-group inputPassword">
+            <i class="bi bi-lock-fill icon"></i>
+            <input type="password" class="form-control" placeholder="Senha" formControlName="password"
+              type="password" />
+          </div>
+
+          <app-campo-control-erro [mostrarErro]="verificaValidTouched('password')" msgErro="Senha obrigatório !">
+          </app-campo-control-erro>
+
+          <div class="form-group login">
+            <button (click)="fazerLogin()" [disabled]="!loginForm.valid" type="submit"
+              class="btn float-right login_btn">Acessar</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <div class="col d-flex justify-content-center mt-4">
+          <app-spinner-loader *ngIf="isLoading"#loginLoader></app-spinner-loader>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

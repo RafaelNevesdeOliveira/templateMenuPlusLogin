@@ -1,0 +1,153 @@
+$top-mnenu:#14293a;
+$bg-atalho-breadcrum:#fafafa;
+$bg-dash: #f4f4f4;
+$verde-logo: #00ed77;
+$violeta-logo: #4e7bf0;
+$buttons: #24b499;
+$font-logo:'Comfortaa', cursive;
+$standard-color: #14293a;
+$standard-color-active: #0b1926;
+$button-collapse: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+
+
+
+.sidebar-heading {
+  padding: 0 !important;
+}
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin 0.25s ease-out;
+  -moz-transition: margin 0.25s ease-out;
+  -o-transition: margin 0.25s ease-out;
+  transition: margin 0.25s ease-out;
+
+}
+
+.menuColor {
+  background: $standard-color;
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+.menuTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  font-weight: bold;
+  color: #fff;
+}
+
+
+.list-group-item.active {
+  border-bottom-color: #182f42;
+  border-top-color: #182f42;
+  border-left-color: transparent;
+
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+// Button collapse MENU
+.accordion-button.collapsed {
+  background-image: $standard-color;
+}
+
+.accordion-button.collapsed::after {
+  background-image: $button-collapse;
+}
+
+.accordion-button:not(.collapsed) {
+  color: #fff;
+  background-color: $standard-color-active;
+  box-shadow: inset -3px 3px 14px rgb(0 0 0 / 15%);
+}
+
+
+.navLink  {
+  background: $standard-color;
+  border-bottom-color: #182f42;
+  border-top-color: #182f42;
+  border-left-color: transparent;
+  color: #fff;
+
+  a {
+    position: relative;
+    color: #fff;
+  }
+
+  a.active{
+    font-weight: 500px;
+  }
+
+  a::after {
+    content: "";
+    color: #fff;
+    width: 0;
+    height: 3px;
+    background-image: linear-gradient($verde-logo, $violeta-logo);
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+
+  }
+
+  a:hover::after {
+    width: 100%;
+    transition: width 700ms cubic-bezier(0.71, 0.01, 0, 0.9);
+    font-weight: bold;
+  }
+}
+
+
+
+.navLink.active {
+  color: $bg-atalho-breadcrum;
+  background: $standard-color-active;
+
+
+}
+
+
+
+
+// RESPONSIVIDADE
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+  }
+  .show {
+    margin-left: 0 !important;
+  }
+  .hide {
+    margin-left: -15rem !important;
+  }
+}
+@media (max-width: 767px) {
+  .show {
+    margin-left: -15rem !important;
+  }
+  .hide {
+    margin-left: -0 !important;
+  }
+}

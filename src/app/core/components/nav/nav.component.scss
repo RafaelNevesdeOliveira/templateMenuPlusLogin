@@ -1,0 +1,82 @@
+@import url("https://fonts.googleapis.com/css?family=Numans");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Fira+Code:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+$top-mnenu: #14293a;
+$bg-atalho-breadcrum: #fafafa;
+$bg-dash: #f4f4f4;
+$verde-logo: #00ed77;
+$violeta-logo: #4e7bf0;
+$buttons: #24b499;
+$font-logo: "Comfortaa", cursive;
+$standard-color: #14293a;
+$standard-color-active: #0b1926;
+
+.navBarMenu {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0px 35px 0 35px;
+  box-shadow: 1px 4px 5px rgb(0 0 0 / 44%);
+  color: #fff;
+  background: #14293a;
+  font-family: roboto, helvetica, arial, sans-serif;
+
+  .buttonCollapse {
+    background-color: transparent;
+    padding: 0;
+
+    i{
+      font-size: 2rem;color: #fff;
+    }
+  }
+
+  .adminLinks {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    img {
+      width: 80px;
+      margin-top: 16px;
+    }
+  }
+  .navDropdown .nav-link {
+    display: flex;
+    padding: 18px 10px 18px 18px;
+  }
+}
+
+// Menu Usuario Lateral
+.menuShow {
+  inset: 0px auto auto auto !important;
+  background: $standard-color;
+
+  a {
+    color: #fff;
+    padding: 20px;
+    font-size: 16px;
+  }
+
+  a:hover {
+    background: $standard-color-active;
+    color: #929ba4;
+  }
+}
+
+.nav-link {
+  color: #fff;
+  font-size: bold;
+}
+
+.navLinkTitle {
+  padding-left: 8px;
+  background-image: linear-gradient(to right, #e7e7e7, #bbb5b7);
+  font-family: "Fira Code", monospace;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-size: 22px;
+  font-weight: bold;
+}
