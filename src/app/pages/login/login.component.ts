@@ -47,30 +47,9 @@ export class LoginComponent implements OnInit {
   }
 
   fazerLogin() {
-    /*     this.utilService.setBtnDisabled(true);
     this.hideForm = !this.hideForm;
     this.isLoading = true
-    this.loginService
-      .gerarToken(this.loginForm.value)
-      .pipe(delay(1000))
-      .subscribe((auth: Auth) => {
-        const { token, usuario } = auth;
-        localStorage.setItem('tokenSistemaExibido', token);
-        localStorage.setItem('userSistemaExibido', JSON.stringify(usuario));
-
-        if(token && usuario){
-          this.loginService.estaAutenticado()
-          this.router.navigate(['/admin']);
-          this.loginForm.reset()
-        }else{
-          this.router.navigate(['/login'])
-        }
-      },
-      () => {
-        this.isLoading = false;
-      }
-      );
- */
+    this.router.navigate(['/admin']);
   }
 
   // #region VALIDATION
