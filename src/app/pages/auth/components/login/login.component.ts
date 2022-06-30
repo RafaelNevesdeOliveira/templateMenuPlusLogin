@@ -1,25 +1,22 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { LoginService } from './services/login.service';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
   public loginForm!: FormGroup;
-  public btnDisabled?: boolean;
   public usuarioAutenticado: boolean = false;
   public isLoading: boolean = false;
   public hideForm: boolean = false;
 
-  mostrarMenuEmitter = new EventEmitter<boolean>();
-
   constructor(
     private formBuilder: FormBuilder,
-    private loginService: LoginService,
+    private authService: AuthService,
     private router: Router
   ) {}
 
@@ -76,4 +73,5 @@ export class LoginComponent implements OnInit {
       'has- ': this.verificaValidTouched(campo),
     };
   }
+
 }

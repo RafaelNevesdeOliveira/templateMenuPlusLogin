@@ -3,12 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'login',
-    loadChildren: () =>
-      import('./pages/login/login.module').then((module) => module.LoginModule),
-  },
-  {
-    path: '', redirectTo: 'login', pathMatch: 'full'
+    path: '', redirectTo: 'auth/login', pathMatch: 'full'
   },
   {
     path: 'admin',
@@ -16,6 +11,10 @@ const routes: Routes = [
       import('./pages/admin/admin.module').then((module) => module.AdminModule),
     /* canActivate: [AuthGuard] */
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then((module) => module.AuthModule),
+  }
 
 
 ];
