@@ -1,9 +1,14 @@
 <nav class="navBarMenu">
   <!-- BUTTON TOGGLER -->
   <div class="buttonToggler">
-    <button class="btn buttonCollapse" (click)="showAndHide()">
-      <i class="bi bi-list iconMenu"></i>
-    </button>
+    <a class="btn buttonCollapse" (click)="showAndHide()">
+      <i class="bi bi-list iconMenu"
+      [ngClass]="{
+        'bi bi-three-dots-vertical': !changeIcon,
+        'bi bi-list': changeIcon
+      }"
+      ></i>
+    </a>
 
   </div>
 
@@ -20,8 +25,6 @@
       <i style="font-size: 1.5rem;display: flex; margin-right: 10px;" class="bi bi-person-fill"></i>User Teste
     </a>
     <ul class="dropdown-menu menuShow" aria-labelledby="navbarDropdown">
-      <li><a class="dropdown-item"><i style="font-size: 0.8rem" class="bi bi-bell-fill"></i> Notificações</a></li>
-      <li><a class="dropdown-item"><i style="font-size: 0.8rem" class="bi bi-list-task"></i> Tarefas</a></li>
       <li><a class="dropdown-item" type="button" (click)="logout()"><i style="font-size: 0.8rem" class="bi bi-box-arrow-right"></i> Logout</a></li>
     </ul>
   </div>

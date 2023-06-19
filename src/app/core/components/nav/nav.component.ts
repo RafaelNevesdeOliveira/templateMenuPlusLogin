@@ -9,7 +9,7 @@ import { AdminService } from 'src/app/pages/admin/services/admin.service';
 })
 export class NavComponent implements OnInit {
   status: boolean = false;
-
+  public changeIcon: boolean = true
   constructor( private router: Router, private adminService: AdminService) { }
 
   ngOnInit(): void {
@@ -17,11 +17,12 @@ export class NavComponent implements OnInit {
 
   logout(){
     localStorage.clear();
-    this.router.navigate(['/login'])
+    this.router.navigate(['auth/login'])
   }
 
   public showAndHide() {
-   this.adminService.clickEvent(true);
-  }
+    this.adminService.clickEvent(true);
+    this.changeIcon = !this.changeIcon;
+   }
 
 }
